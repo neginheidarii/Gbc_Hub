@@ -1,20 +1,19 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ({imgSrc, title, description, buttonText}) => {
   return (
     <>
       <div className="card bg-base-100 w-96 shadow-xl">
         <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
-          />
+          <img src={imgSrc} alt={title} />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <h2 className="card-title">Project Ideas</h2>
+          <p className="text-left">{description}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+            <button className="btn w-full border-[#005AA5] rounded-2xl border-2 text-[#005AA5]">
+              {buttonText}
+            </button>
           </div>
         </div>
       </div>
