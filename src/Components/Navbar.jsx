@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from "../assets/logo/logo.png";
-
+import {Link} from "react-router-dom";
+import {Home, ProjectIdeas, PacMeetings, Speaker, Contact} from "../Screens";
+ 
 const Navbar = () => {
   return (
     <div className="navbar px-12 bg-[#E7F6FF] font-inter text-base font-bold leading-5 tracking-tight text-left  text-[#005AA5]">
@@ -48,24 +50,26 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a>Project Ideas</a>
+            <Link to="/project-ideas">Project Ideas</Link>
           </li>
           <li>
-            <a>PAC Meetings</a>
+            <Link to="/pac-meetings">PAC Meetings</Link>
           </li>
           <li>
-            <a>Guest Speaker</a>
+            <Link to="/guest-speaker">Guest Speaker</Link>
           </li>
           <li>
-            <a>Contact US</a>
+            <Link to="/contact-us">Contact US</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn  bg-[#FECB00] w-32 font-inter font-medium">Join Now</a>
+        <a className="btn  bg-[#FECB00] w-32 font-inter font-medium">
+          Join Now
+        </a>
       </div>
     </div>
   );
