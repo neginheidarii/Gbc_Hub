@@ -1,4 +1,4 @@
-import speaker  from "./images/speaker.png";
+import speaker  from "./images/speaker.jpg";
 import logo from './logo/logo.png';
 import  hero  from "./images/hero.png";
 import partner from './images/partner.jpg';
