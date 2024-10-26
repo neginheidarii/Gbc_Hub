@@ -4,7 +4,7 @@ import pic from "../assets/images/partner.jpg";
 const FooterBadge = () => {
   return (
     <>
-      <div className="relative h-64 rounded-md shadow-xl flex p-8 bg-[#bfdbfe]">
+      <div className="relative h-64 rounded-md shadow-xl flex p-8 bg-[#e7f6ff]">
         <img
           src={pic}
           alt="Shoes"
