@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Card";
 
 const Hero = ({ title, description, buttonText, imgSrc, formInput }) => {
   return (
@@ -24,8 +25,8 @@ const Hero = ({ title, description, buttonText, imgSrc, formInput }) => {
         </div>
       )}
       {formInput && (
-        <div className="hidden lg:block flex-1 w-2/3">
-          <img src={imgSrc} alt="" className="w-3/4 h-auto" />
+        <div className=" justify-center items-center">
+          <Card />
         </div>
       )}
     </div>
