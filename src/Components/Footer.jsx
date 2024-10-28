@@ -3,7 +3,7 @@ import logo from "../assets/logo/logo.png";
 
 const Footer = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
       <div className="flex justify-between items-center w-full">
         <div className="flex flex-row justify-center items-center gap-2">
           <img src={logo} alt="logo" className="w-16" />
@@ -25,7 +25,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <p className=" pr-4">@ 2024 GBC Hub. All rights reserved.</p>
+        <p className="pr-4">@ 2024 GBC Hub. All rights reserved.</p>
       </div>
     </div>
   );
