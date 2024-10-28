@@ -20,8 +20,12 @@ const Hero = ({ title, description, buttonText, imgSrc, formInput }) => {
         </div>
       </div>
       {imgSrc && (
-        <div className="hidden lg:block flex-1 w-2/3">
-          <img src={imgSrc} alt="hero" className="w-3/4 h-auto" />
+        <div className="hidden lg:block flex-1 w-2/3 ">
+          <img
+            src={imgSrc}
+            alt="hero"
+            className="w-5/6 h-full rounded-tl-[254px]"
+          />
         </div>
       )}
       {formInput && (
