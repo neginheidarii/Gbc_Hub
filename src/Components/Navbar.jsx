@@ -1,8 +1,15 @@
-import React from 'react'
+import React from "react";
 import logo from "../assets/logo/logo.png";
-import {Link} from "react-router-dom";
-import {Home, ProjectIdeas, PacMeetings, Speaker, Contact} from "../Screens";
- 
+import { NavLink, Link } from "react-router-dom";
+
+const navItems = [
+  { path: "/", label: "Home" },
+  { path: "/project-ideas", label: "Project Ideas" },
+  { path: "/pac-meetings", label: "PAC Meetings" },
+  { path: "/guest-speaker", label: "Guest Speaker" },
+  { path: "/contact-us", label: "Contact US" },
+];
+
 const Navbar = () => {
   return (
     <div className="navbar px-12 bg-[#E7F6FF] font-inter text-base font-bold leading-5 tracking-tight text-left  text-[#005AA5]">
@@ -28,42 +35,30 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content  rounded-box z-[1] mt-3 w-52 p-2 shadow "
           >
-            <li className="">
-              <a className="">Home</a>
-            </li>
-            <li>
-              <a>Project Ideas</a>
-            </li>
-            <li>
-              <a>PAC Meetings</a>
-            </li>
-            <li>
-              <a>Guest Speaker</a>
-            </li>
-            <li>
-              <a>Contact US</a>
-            </li>
+            {navItems.map((item) => (
+              <li key={item.path}>
+                <NavLink to={item.path}> {item.label} </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
         <img src={logo} alt="logo" className="hidden lg:block w-20" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/project-ideas">Project Ideas</Link>
-          </li>
-          <li>
-            <Link to="/pac-meetings">PAC Meetings</Link>
-          </li>
-          <li>
-            <Link to="/guest-speaker">Guest Speaker</Link>
-          </li>
-          <li>
-            <Link to="/contact-us">Contact US</Link>
-          </li>
+          {navItems.map((item) => (
+            <li key={item.path}>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  isActive ? "text-[#00A1DE] underline" : "text-[#005AA5]"
+                }
+              >
+                {item.label}
+              </NavLink>
+
+            </li>
+          ))}
         </ul>
       </div>
       <div className="navbar-end">
@@ -73,6 +68,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
