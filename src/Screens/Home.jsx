@@ -2,7 +2,6 @@ import React from "react";
 import { Hero, FooterBadge, Footer, Card, Navbar } from "../Components/index";
 import { pac, speaker, partner, hero, logo, project } from "../assets/index";
 
-
 const Home = () => {
   return (
     <>
@@ -13,7 +12,7 @@ const Home = () => {
         imgSrc={hero}
         buttonText="Learn more"
       />
-      <div className="bg-[#005AA5] text-[#ffff] text-center w-full h-72">
+      <div className="bg-gradient-to-r  from-[#005AA5] to-[#00A1DE] text-[#ffff] text-center w-full h-72">
         <p className="font-inter text-4xl font-semibold leading-[61.5px] tracking-tight text-center py-9 ">
           Why GBC Hub?
         </p>
@@ -29,7 +28,7 @@ const Home = () => {
         <h1 className="font-inter text-4xl font-semibold tracking-tight text-center py-10">
           Explore Collaboration Opportunities
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 px-10 place-items-center">
           <Card
             imgSrc={project}
             title="Project Ideas"
@@ -41,6 +40,7 @@ const Home = () => {
             title="PAC Meetings for Course Evaluations"
             description="Join our committee and help align our courses with industry trends."
             buttonText="Learn more"
+            className="text-start"
           />
           <Card
             imgSrc={speaker}
