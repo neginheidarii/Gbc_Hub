@@ -11,7 +11,7 @@ const Card = ({ imgSrc, title, description, buttonText, formInput }) => {
         )}
         <div className="card-body">
           {formInput && (
-            <div className="flex flex-col items-center justify-center gap-y-4">
+            <div className="flex flex-col ">
               <div className="w-full">
                 <label className="block text-sm font-medium mb-1">
                   Your Name
@@ -45,7 +45,7 @@ const Card = ({ imgSrc, title, description, buttonText, formInput }) => {
                 />
               </div>
 
-              <button className="btn bg-[#005AA5] text-white w-full rounded-xl">
+              <button className="btn bg-[#005AA5] text-white w-full rounded-xl hover:text-[#131133] hover:bg-[#7fc8f0] ">
                 Send Message
               </button>
             </div>
@@ -55,7 +55,7 @@ const Card = ({ imgSrc, title, description, buttonText, formInput }) => {
           <p className="text-left">{description}</p>
           <div className="card-actions justify-end">
             {buttonText && (
-              <button className="btn w-full border-[#005AA5] rounded-2xl border-2 text-[#005AA5]">
+              <button className="btn w-full border-[#005AA5] rounded-2xl border-2 text-[#005AA5]  hover:text-[#131133] hover:bg-[#7fc8f0] hover:border-0">
                 {buttonText}
               </button>
             )}
