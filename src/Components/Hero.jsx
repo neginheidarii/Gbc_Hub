@@ -13,7 +13,7 @@ const Hero = ({ title, description, buttonText, imgSrc, formInput }) => {
             {description}
           </p>
           {buttonText && (
-            <button className="btn bg-[#005AA5] text-white w-36 justify-center rounded-xl">
+            <button className="btn bg-[#005AA5] text-white font-normal w-36 justify-center rounded-xl hover:text-[#131133] hover:bg-[#7fc8f0]">
               {buttonText}
             </button>
           )}
