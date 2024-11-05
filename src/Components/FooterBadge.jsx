@@ -25,7 +25,7 @@ const FooterBadge = () => {
 
         {/* Right Button Section */}
         <div>
-          <a className="btn bg-[#FECB00] w-32 font-inter font-medium text-center mr-10">
+          <a href="/join-now" className="btn bg-[#FECB00] w-32 font-inter font-medium text-center mr-10">
             Join Now
           </a>
         </div>
