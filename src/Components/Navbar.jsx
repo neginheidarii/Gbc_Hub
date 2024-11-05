@@ -56,13 +56,15 @@ const Navbar = () => {
               >
                 {item.label}
               </NavLink>
-
             </li>
           ))}
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn  bg-[#FECB00] w-32 font-inter font-medium">
+        <a
+          href="/join-now"
+          className="btn  bg-[#FECB00] w-32 font-inter font-medium"
+        >
           Join Now
         </a>
       </div>
