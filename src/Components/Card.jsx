@@ -1,8 +1,23 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Card = ({ imgSrc, title, description, buttonText, formInput }) => {
-  return (
-    <>
+const Card = ({
+  imgSrc,
+  title,
+  description,
+  buttonText,
+  formInput,
+  navButton,
+}) => {
+  const navigation = useNavigate();
+
+  const handleButtonClick = () => {
+    if (navButton) {
+      console.log("Navigating to:", navButton); // Debug log
+      navigation(navButton);
+    }
+  }
+    return (
       <div className="card bg-base-100 w-96 shadow-xl">
         {imgSrc && (
           <figure>
@@ -45,7 +60,10 @@ const Card = ({ imgSrc, title, description, buttonText, formInput }) => {
                 />
               </div>
 
-              <button className="btn bg-[#005AA5] text-white w-full rounded-xl hover:text-[#131133] hover:bg-[#7fc8f0] ">
+              <button
+          
+                className="btn bg-[#005AA5] text-white w-full rounded-xl hover:text-[#131133] hover:bg-[#7fc8f0] "
+              >
                 Send Message
               </button>
             </div>
@@ -55,15 +73,16 @@ const Card = ({ imgSrc, title, description, buttonText, formInput }) => {
           <p className="text-left">{description}</p>
           <div className="card-actions justify-end">
             {buttonText && (
-              <button className="btn w-full border-[#005AA5] rounded-2xl border-2 text-[#005AA5]  hover:text-[#131133] hover:bg-[#7fc8f0] hover:border-0">
+              <button
+                onClick={handleButtonClick}
+                className="btn w-full border-[#005AA5] rounded-2xl border-2 text-[#005AA5]  hover:text-[#131133] hover:bg-[#7fc8f0] hover:border-0"
+              >
                 {buttonText}
               </button>
             )}
           </div>
         </div>
       </div>
-    </>
-  );
-};
-
-export default Card
+    );
+  };
+export default Card;
