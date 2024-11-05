@@ -34,6 +34,7 @@ const Home = () => {
             title="Project Ideas"
             description="Share your projects and help students gain real-world experience while benefiting from fresh ideas."
             buttonText="Learn more"
+            navButton="/project-ideas"
           />
           <Card
             imgSrc={pac}
@@ -41,12 +42,14 @@ const Home = () => {
             description="Join our committee and help align our courses with industry trends."
             buttonText="Learn more"
             className="text-start"
+            navButton="/pac-meetings"
           />
           <Card
             imgSrc={speaker}
             title="Guest Speaker Invitation"
             description="Share your expertise with the next generation of tech professionals."
             buttonText="Learn more"
+            navButton="/guest-speaker"
           />
         </div>
       </div>
