@@ -11,6 +11,7 @@ const Home = () => {
         description=" GBC Hub is the cornerstone of innovation and collaboration at George Brown College. We bring together industry professionals, educators, and students to create a dynamic learning environment where real-world challenges meet cutting-edge education. Join us in shaping the future of tech education and driving impactful change across the industry."
         imgSrc={hero}
         buttonText="Learn more"
+     
       />
       <div className="bg-gradient-to-r  from-[#005AA5] to-[#00A1DE] text-[#ffff] text-center w-full h-72">
         <p className="font-inter text-4xl font-semibold leading-[61.5px] tracking-tight text-center py-9 ">
