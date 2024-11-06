@@ -13,6 +13,7 @@ function ProjectIdeas() {
         }
         imgSrc={project}
         buttonText={"Submit Your Project Ideas"}
+        NavButton={"/project-ideas-form"}
       />
 
       <FooterBadge />
