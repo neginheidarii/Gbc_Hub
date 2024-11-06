@@ -8,6 +8,9 @@ import {
   Speaker,
   Contact,
   JoinNow,
+  ProjectIdeasForm,
+  PacMeetingsForm,
+  SpeakersForm,
 } from "./Screens";
 
 const App = () => {
@@ -20,6 +23,9 @@ const App = () => {
         <Route path="/guest-speaker" element={<Speaker />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/join-now" element={<JoinNow />} />
+        <Route path="/project-ideas-form" element={<ProjectIdeasForm />} />
+        <Route path="/pac-meetings-form" element={<PacMeetingsForm />} />
+        <Route path="/speakers-form" element={<SpeakersForm />} />
       </Routes>
     </Router>
   );
