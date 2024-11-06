@@ -13,6 +13,7 @@ function PacMeetings() {
         }
         imgSrc={pac}
         buttonText={"Join the PAC"}
+        NavButton={"/pac-meetings-form"}
       />
       <FooterBadge />
       <Footer />
