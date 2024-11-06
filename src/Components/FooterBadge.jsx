@@ -1,12 +1,12 @@
 import React from "react";
-import pic from "../assets/images/partner.jpg";
+import partner from "/images/partner.jpg";
 
 const FooterBadge = () => {
   return (
     <div className="relative h-64 rounded-md shadow-sm flex p-8 bg-[#e7f6ff]">
       {/* Image with gradient overlay */}
       <div className="relative w-full h-full rounded-xl overflow-hidden">
-        <img src={pic} alt="Shoes" className="w-full h-full object-cover" />
+        <img src={partner} alt="Shoes" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#005AA5] to-[#00A1DE] opacity-70"></div>
       </div>
 
@@ -25,7 +25,10 @@ const FooterBadge = () => {
 
         {/* Right Button Section */}
         <div>
-          <a href="/join-now" className="btn bg-[#FECB00] w-32 font-inter font-medium text-center mr-10">
+          <a
+            href="/join-now"
+            className="btn bg-[#FECB00] w-32 font-inter font-medium text-center mr-10"
+          >
             Join Now
           </a>
         </div>
@@ -33,6 +36,5 @@ const FooterBadge = () => {
     </div>
   );
 };
-
 
 export default FooterBadge;

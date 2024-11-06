@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Navbar, Footer, FooterBadge, Hero, Card } from "../Components";
 import { project } from "../assets/index";
 
@@ -22,4 +22,4 @@ function ProjectIdeas() {
   );
 }
 
-export default ProjectIdeas
+export default ProjectIdeas;
