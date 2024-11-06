@@ -4,5 +4,8 @@ import ProjectIdeas from "./ProjectIdeas";
 import Speaker from "./Speaker";
 import PacMeetings from "./PacMeetings";
 import JoinNow from "./JoinNow";
+import ProjectIdeasForm from "./ProjectIdeasForm";
+import PacMeetingsForm from "./PacMeetingsForm";
+import SpeakersForm from "./SpeakersForm";
 
-export { Contact, Home, ProjectIdeas, Speaker, PacMeetings, JoinNow };
+export { Contact, Home, ProjectIdeas, Speaker, PacMeetings, JoinNow, ProjectIdeasForm, PacMeetingsForm, SpeakersForm };
