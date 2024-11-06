@@ -1,5 +1,5 @@
 import React from "react";
-// import logo from "../assets/index";
+import logo from "/logo/logo.png";
 import { NavLink, Link } from "react-router-dom";
 
 const navItems = [
@@ -42,7 +42,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        {/* <img src={logo} alt="logo" className="hidden lg:block w-20" /> */}
+        <img src={logo} alt="logo" className="hidden lg:block w-20" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
