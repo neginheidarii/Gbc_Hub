@@ -1,7 +1,18 @@
 import React from "react";
 import Card from "./Card";
+import {useNavigate} from "react-router-dom";
 
-const Hero = ({ title, description, buttonText, imgSrc, formInput }) => {
+const Hero = ({ title, description, buttonText, NavButton, imgSrc, formInput }) => {
+
+  const navigation = useNavigate();
+
+  const handleButtonClick = () => {
+    if (NavButton) {
+      console.log("Navigating to:", NavButton); 
+      navigation(NavButton);
+    }
+  }
+
   return (
     <div className="hero min-h-screen  flex flex-col lg:flex-row bg-[#e7f6ff]">
       <div className="text-center hero-content flex-1 w-1/3">
@@ -13,7 +24,7 @@ const Hero = ({ title, description, buttonText, imgSrc, formInput }) => {
             {description}
           </p>
           {buttonText && (
-            <button className="btn bg-[#005AA5] text-white font-normal w-36 justify-center rounded-xl hover:text-[#131133] hover:bg-[#7fc8f0]">
+            <button onClick={handleButtonClick} className="btn bg-[#005AA5] text-white font-normal w-36 justify-center rounded-xl hover:text-[#131133] hover:bg-[#7fc8f0]">
               {buttonText}
             </button>
           )}
