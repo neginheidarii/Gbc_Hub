@@ -47,7 +47,7 @@ const Programs = () => {
   return (
     <>
       {/* Programs Offered Section */}
-      <section className="bg-gray-50 py-12">
+      <section className="bg-[#e7f6ff] py-12">
         <h2 className="text-3xl font-bold text-center text-[#005AA5] mb-8">
           Programs Offered
         </h2>
