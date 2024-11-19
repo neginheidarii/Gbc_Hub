@@ -142,8 +142,8 @@ const HighSchoolInvite = () => {
         </div>
 
         {/* 6 Reasons Section */}
-        <section className="bg-white py-16">
-          <h2 className="text-3xl font-bold text-[#005AA5] text-center mb-8">
+        <section className="bg-[#005aa5] py-16 rounded-2xl p-10">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">
             6 Reasons to Study at George Brown College
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
@@ -271,20 +271,8 @@ const HighSchoolInvite = () => {
           </button>
         </form>
 
-        {/* Explore Programs Button */}
-        <div className="mb-8">
-          <a
-            href="https://www.georgebrown.ca/programs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="py-3 px-6 bg-[#005AA5] text-white text-lg font-medium rounded-lg hover:bg-[#7fc8f0] transition-colors"
-          >
-            Explore More Programs on GBC Website
-          </a>
-        </div>
-
         {/* Programs Section */}
-        <div className="mt-12 w-full max-w-4xl text-center">
+        <div className="mt-12 w-full max-w-4xl text-center mb-10">
           <h2 className="text-3xl font-bold text-[#005AA5] mb-8">
             Explore Our Technology Programs
           </h2>
@@ -323,6 +311,18 @@ const HighSchoolInvite = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Explore Programs Button */}
+        <div className="mb-8">
+          <a
+            href="https://www.georgebrown.ca/programs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="py-3 px-6 bg-[#005AA5] text-white text-lg font-medium rounded-lg hover:bg-[#7fc8f0] transition-colors"
+          >
+            Explore More Programs on GBC Website
+          </a>
         </div>
       </div>
       <Footer />
