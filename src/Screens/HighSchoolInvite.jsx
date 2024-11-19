@@ -3,29 +3,21 @@ import { Navbar, Footer } from "../Components";
 
 const HighSchoolInvite = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    isHighSchoolStudent: false,
-    currentSchool: "",
-    graduationDate: "",
-    fieldOfInterest: "",
-    programOfInterest: "",
+    fullName: "",
+    email: "",
   });
 
   const [expanded, setExpanded] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Registration Submitted", formData);
-    // Handle form submission (e.g., send data to backend)
+    // Handle form submission here (e.g., send data to backend)
   };
 
   const toggleDescription = (index) => {
@@ -55,7 +47,39 @@ const HighSchoolInvite = () => {
       international: "Yes",
       description:
         "The one-year Cloud Computing Technologies graduate certificate program will give you a broad, in-depth technical base through courses in system and network administration, cloud productivity tools, and cloud computing design and security.",
-      duration: "1 year (3 Semesters)",
+      duration: "1 year (3 semesters)",
+    },
+    {
+      name: "Computer Programming (T186)",
+      credential: "Ontario College Diploma",
+      international: "Yes",
+      description:
+        "Get the technical and soft skills to launch a successful career in the information technology (IT) field as a software developer, quality assurance analyst and more with the two-year Computer Programming (T186) diploma program.",
+      duration: "2 years",
+    },
+    {
+      name: "Cyber Security (Postgraduate) (T433)",
+      credential: "Ontario College Graduate Certificate",
+      international: "Yes",
+      description:
+        "This program prepares you to protect systems and networks from cyber threats with in-depth training in security protocols and risk management.",
+      duration: "1 year (3 semesters)",
+    },
+    {
+      name: "Game – Programming (T163)",
+      credential: "Ontario College Advanced Diploma",
+      international: "Yes",
+      description:
+        "Learn to design and develop games for various platforms, focusing on coding, design principles, and interactive technologies.",
+      duration: "3 years",
+    },
+    {
+      name: "Mobile Application Development and Strategy (Postgraduate) (T440)",
+      credential: "Ontario College Graduate Certificate",
+      international: "Yes",
+      description:
+        "This program focuses on creating mobile apps with a user-centered approach, leveraging the latest technologies and frameworks.",
+      duration: "1 year (3 semesters)",
     },
   ];
 
@@ -78,10 +102,10 @@ const HighSchoolInvite = () => {
           </p>
         </div>
 
-        {/* Registration Form */}
+       {/* Registration Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg space-y-6"
+          className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg space-y-6 mb-20"
         >
           <h2 className="text-2xl font-semibold text-[#005AA5] text-center mb-6">
             Registration Form
@@ -114,8 +138,7 @@ const HighSchoolInvite = () => {
           </div>
           <div className="space-y-4">
             <label className="block text-gray-700 text-sm font-medium">
-              Are you a high school student?{" "}
-              <span className="text-red-500">*</span>
+              Are you a high school student? <span className="text-red-500">*</span>
             </label>
             <input
               type="checkbox"
@@ -186,6 +209,18 @@ const HighSchoolInvite = () => {
             Register Now
           </button>
         </form>
+
+        {/* Explore Programs Button */}
+        <div className="mb-8">
+          <a
+            href="https://www.georgebrown.ca/programs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="py-3 px-6 bg-[#005AA5] text-white text-lg font-medium rounded-lg hover:bg-[#7fc8f0] transition-colors"
+          >
+            Explore More Programs on GBC Website
+          </a>
+        </div>
 
         {/* Programs Section */}
         <div className="mt-12 w-full max-w-4xl text-center">
