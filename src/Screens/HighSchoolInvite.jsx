@@ -24,6 +24,45 @@ const HighSchoolInvite = () => {
     setExpanded(expanded === index ? null : index);
   };
 
+  const reasons = [
+    {
+      title: "Study in downtown Toronto",
+      description:
+        "Our location provides you with access to top employers for field education opportunities.",
+      image: "St James Campus exterior, King Street, with streetcar",
+    },
+    {
+      title: "Practical, real-world experience",
+      description:
+        "Our facilities, including The Chefs' House and WAVE Clinics, simulate real-world work environments. All of our career-focused programs include at least one experiential learning opportunity*.",
+      image: "2 students working in health sciences simulation centre",
+    },
+    {
+      title: "Informed by industry",
+      description:
+        "We work with industry leaders to ensure the skills you learn in class are the ones you'll need on the job.",
+      image: "Male construction student hero shot on site.",
+    },
+    {
+      title: "Expert instructors",
+      description:
+        "Many faculty members have industry experience and will share their real-world knowledge with you.",
+      image: "Centre for Business students in class at 200 King St. E.",
+    },
+    {
+      title: "Applied research",
+      description:
+        "Gain hands-on experience working alongside industry professionals to develop and test new products.",
+      image: "CNC machining student",
+    },
+    {
+      title: "Promoting entrepreneurship",
+      description:
+        "Want to start your own business? Our entrepreneurship hub startGBC can help get your great idea off the ground.",
+      image: "Students sitting at boardroom table",
+    },
+  ];
+
   const programs = [
     {
       name: "Applied A.I. Solutions Development (Postgraduate) (T431)",
@@ -102,7 +141,28 @@ const HighSchoolInvite = () => {
           </p>
         </div>
 
-       {/* Registration Form */}
+        {/* 6 Reasons Section */}
+        <section className="bg-white py-16">
+          <h2 className="text-3xl font-bold text-[#005AA5] text-center mb-8">
+            6 Reasons to Study at George Brown College
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+            {reasons.map((reason, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 shadow-lg rounded-lg p-6 text-center"
+              >
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                  {reason.title}
+                </h3>
+                <p className="text-gray-700 mb-4">{reason.description}</p>
+                <p className="text-gray-500 italic">{reason.image}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Registration Form */}
         <form
           onSubmit={handleSubmit}
           className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg space-y-6 mb-20"
@@ -138,7 +198,8 @@ const HighSchoolInvite = () => {
           </div>
           <div className="space-y-4">
             <label className="block text-gray-700 text-sm font-medium">
-              Are you a high school student? <span className="text-red-500">*</span>
+              Are you a high school student?{" "}
+              <span className="text-red-500">*</span>
             </label>
             <input
               type="checkbox"
