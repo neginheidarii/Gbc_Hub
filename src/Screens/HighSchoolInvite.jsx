@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Navbar, Footer } from "../Components";
 
 const HighSchoolInvite = () => {
+  const [isFormVisible, setIsFormVisible] = useState(false); // State to toggle form visibility
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -22,6 +23,10 @@ const HighSchoolInvite = () => {
 
   const toggleDescription = (index) => {
     setExpanded(expanded === index ? null : index);
+  };
+
+  const toggleFormVisibility = () => {
+    setIsFormVisible(!isFormVisible); // Toggle form visibility
   };
 
   const reasons = [
@@ -162,114 +167,101 @@ const HighSchoolInvite = () => {
           </div>
         </section>
 
-        {/* Registration Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg space-y-6 mb-20"
-        >
-          <h2 className="text-2xl font-semibold text-[#005AA5] text-center mb-6">
-            Registration Form
-          </h2>
-          <div className="space-y-4">
-            <label className="block text-gray-700 text-sm font-medium">
-              First Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
-              required
-            />
-          </div>
-          <div className="space-y-4">
-            <label className="block text-gray-700 text-sm font-medium">
-              Last Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
-              required
-            />
-          </div>
-          <div className="space-y-4">
-            <label className="block text-gray-700 text-sm font-medium">
-              Are you a high school student?{" "}
-              <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="checkbox"
-              name="isHighSchoolStudent"
-              checked={formData.isHighSchoolStudent}
-              onChange={handleChange}
-              className="w-5 h-5"
-            />
-          </div>
-          <div className="space-y-4">
-            <label className="block text-gray-700 text-sm font-medium">
-              Current School
-            </label>
-            <input
-              type="text"
-              name="currentSchool"
-              value={formData.currentSchool}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
-            />
-          </div>
-          <div className="space-y-4">
-            <label className="block text-gray-700 text-sm font-medium">
-              Expected Date of Graduation
-            </label>
-            <input
-              type="date"
-              name="graduationDate"
-              value={formData.graduationDate}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
-            />
-          </div>
-          <div className="space-y-4">
-            <label className="block text-gray-700 text-sm font-medium">
-              Field of Interest
-            </label>
-            <input
-              type="text"
-              name="fieldOfInterest"
-              value={formData.fieldOfInterest}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
-            />
-          </div>
-          <div className="space-y-4">
-            <label className="block text-gray-700 text-sm font-medium">
-              Program of Interest
-            </label>
-            <select
-              name="programOfInterest"
-              value={formData.programOfInterest}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
-            >
-              <option value="">Select a Program</option>
-              {programs.map((program, index) => (
-                <option key={index} value={program.name}>
-                  {program.name}
-                </option>
-              ))}
-            </select>
-          </div>
+        {/* Button to Show/Hide Registration Form */}
+        <div className="m-20 ">
           <button
-            type="submit"
-            className="w-full py-3 bg-[#005AA5] text-white rounded-lg text-lg font-medium hover:bg-[#7fc8f0] transition-colors"
+            onClick={toggleFormVisibility}
+            className="py-3 px-6 bg-[#005AA5] text-white text-lg font-medium rounded-lg hover:bg-[#7fc8f0] transition-colors"
           >
-            Register Now
+            Register for Campus Tour
           </button>
-        </form>
+        </div>
+
+        {/* Registration Form */}
+        {isFormVisible && (
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg space-y-6 mb-20"
+          >
+            <h2 className="text-2xl font-semibold text-[#005AA5] text-center mb-6">
+              Registration Form
+            </h2>
+            <div className="space-y-4">
+              <label className="block text-gray-700 text-sm font-medium">
+                Full Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
+                required
+              />
+            </div>
+            <div className="space-y-4">
+              <label className="block text-gray-700 text-sm font-medium">
+                Email Address <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
+                required
+              />
+            </div>
+            <div className="space-y-4">
+              <label className="block text-gray-700 text-sm font-medium">
+                Are you a high school student?{" "}
+                <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="checkbox"
+                name="isHighSchoolStudent"
+                checked={formData.isHighSchoolStudent || false}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    isHighSchoolStudent: e.target.checked,
+                  }))
+                }
+                className="w-5 h-5"
+              />
+            </div>
+            <div className="space-y-4">
+              <label className="block text-gray-700 text-sm font-medium">
+                Current School
+              </label>
+              <input
+                type="text"
+                name="currentSchool"
+                value={formData.currentSchool || ""}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
+              />
+            </div>
+            <div className="space-y-4">
+              <label className="block text-gray-700 text-sm font-medium">
+                Expected Date of Graduation
+              </label>
+              <input
+                type="date"
+                name="graduationDate"
+                value={formData.graduationDate || ""}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3 bg-[#005AA5] text-white rounded-lg text-lg font-medium hover:bg-[#7fc8f0] transition-colors"
+            >
+              Submit
+            </button>
+          </form>
+        )}
 
         {/* Programs Section */}
         <div className="mt-12 w-full max-w-4xl text-center mb-10">
