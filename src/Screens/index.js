@@ -7,5 +7,17 @@ import JoinNow from "./JoinNow";
 import ProjectIdeasForm from "./ProjectIdeasForm";
 import PacMeetingsForm from "./PacMeetingsForm";
 import SpeakersForm from "./SpeakersForm";
+import HighSchoolInvite from "./HighSchoolInvite";
 
-export { Contact, Home, ProjectIdeas, Speaker, PacMeetings, JoinNow, ProjectIdeasForm, PacMeetingsForm, SpeakersForm };
+export {
+  Contact,
+  Home,
+  ProjectIdeas,
+  Speaker,
+  PacMeetings,
+  JoinNow,
+  ProjectIdeasForm,
+  PacMeetingsForm,
+  SpeakersForm,
+  HighSchoolInvite,
+};

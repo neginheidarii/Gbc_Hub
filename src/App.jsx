@@ -11,6 +11,7 @@ import {
   ProjectIdeasForm,
   PacMeetingsForm,
   SpeakersForm,
+  HighSchoolInvite
 } from "./Screens";
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/project-ideas-form" element={<ProjectIdeasForm />} />
         <Route path="/pac-meetings-form" element={<PacMeetingsForm />} />
         <Route path="/speakers-form" element={<SpeakersForm />} />
+        <Route path="/students-invite" element={<HighSchoolInvite />} />
       </Routes>
     </Router>
   );
