@@ -3,20 +3,29 @@ import { Navbar, Footer } from "../Components";
 
 const HighSchoolInvite = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
+    firstName: "",
+    lastName: "",
+    isHighSchoolStudent: false,
+    currentSchool: "",
+    graduationDate: "",
+    fieldOfInterest: "",
+    programOfInterest: "",
   });
+
   const [expanded, setExpanded] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Registration Submitted", formData);
-    // Handle form submission here (e.g., send data to backend)
+    // Handle form submission (e.g., send data to backend)
   };
 
   const toggleDescription = (index) => {
@@ -48,14 +57,26 @@ const HighSchoolInvite = () => {
         "The one-year Cloud Computing Technologies graduate certificate program will give you a broad, in-depth technical base through courses in system and network administration, cloud productivity tools, and cloud computing design and security.",
       duration: "1 year (3 Semesters)",
     },
-    // Add more programs here...
   ];
 
   return (
     <div>
       <Navbar />
       <div className="min-h-screen flex flex-col items-center bg-blue-50 p-4">
-   
+        {/* GBC Opportunities Paragraph */}
+        <div className="mb-8 text-center">
+          <h1 className="text-4xl font-bold text-[#005AA5] mb-4">
+            Welcome to George Brown College
+          </h1>
+          <p className="text-lg text-gray-700 max-w-3xl">
+            George Brown College (GBC) offers a range of cutting-edge programs
+            designed to prepare students for success in the dynamic world of
+            technology and innovation. Whether you’re looking to explore
+            artificial intelligence, blockchain development, or cloud computing,
+            our programs provide the skills and knowledge needed to thrive in
+            these growing fields. Discover your future at GBC!
+          </p>
+        </div>
 
         {/* Registration Form */}
         <form
@@ -67,12 +88,12 @@ const HighSchoolInvite = () => {
           </h2>
           <div className="space-y-4">
             <label className="block text-gray-700 text-sm font-medium">
-              Full Name <span className="text-red-500">*</span>
+              First Name <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
-              name="fullName"
-              value={formData.fullName}
+              name="firstName"
+              value={formData.firstName}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
               required
@@ -80,16 +101,83 @@ const HighSchoolInvite = () => {
           </div>
           <div className="space-y-4">
             <label className="block text-gray-700 text-sm font-medium">
-              Email Address <span className="text-red-500">*</span>
+              Last Name <span className="text-red-500">*</span>
             </label>
             <input
-              type="email"
-              name="email"
-              value={formData.email}
+              type="text"
+              name="lastName"
+              value={formData.lastName}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
               required
             />
+          </div>
+          <div className="space-y-4">
+            <label className="block text-gray-700 text-sm font-medium">
+              Are you a high school student?{" "}
+              <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="checkbox"
+              name="isHighSchoolStudent"
+              checked={formData.isHighSchoolStudent}
+              onChange={handleChange}
+              className="w-5 h-5"
+            />
+          </div>
+          <div className="space-y-4">
+            <label className="block text-gray-700 text-sm font-medium">
+              Current School
+            </label>
+            <input
+              type="text"
+              name="currentSchool"
+              value={formData.currentSchool}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
+            />
+          </div>
+          <div className="space-y-4">
+            <label className="block text-gray-700 text-sm font-medium">
+              Expected Date of Graduation
+            </label>
+            <input
+              type="date"
+              name="graduationDate"
+              value={formData.graduationDate}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
+            />
+          </div>
+          <div className="space-y-4">
+            <label className="block text-gray-700 text-sm font-medium">
+              Field of Interest
+            </label>
+            <input
+              type="text"
+              name="fieldOfInterest"
+              value={formData.fieldOfInterest}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
+            />
+          </div>
+          <div className="space-y-4">
+            <label className="block text-gray-700 text-sm font-medium">
+              Program of Interest
+            </label>
+            <select
+              name="programOfInterest"
+              value={formData.programOfInterest}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005AA5]"
+            >
+              <option value="">Select a Program</option>
+              {programs.map((program, index) => (
+                <option key={index} value={program.name}>
+                  {program.name}
+                </option>
+              ))}
+            </select>
           </div>
           <button
             type="submit"
