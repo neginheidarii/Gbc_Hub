@@ -7,10 +7,16 @@ const Hero = ({ title, description, buttonText, NavButton, imgSrc, formInput }) 
   const navigation = useNavigate();
 
   const handleButtonClick = () => {
-    if (NavButton) {
-      console.log("Navigating to:", NavButton); 
-      navigation(NavButton);
-    }
+   if (NavButton.startsWith("#")) {
+     // Scroll to the section with the ID
+     const element = document.querySelector(NavButton);
+     if (element) {
+       element.scrollIntoView({ behavior: "smooth" });
+     }
+   } else {
+     // Navigate to a route
+     navigate(NavButton);
+   }
   }
 
   return (
