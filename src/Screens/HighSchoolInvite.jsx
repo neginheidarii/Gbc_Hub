@@ -132,7 +132,8 @@ const HighSchoolInvite = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar
+      joinNowBtn={"Join Now"} />
       <div className="min-h-screen flex flex-col items-center bg-blue-50 p-4">
         {/* GBC Opportunities Paragraph */}
         <div className="mb-8 text-center">
