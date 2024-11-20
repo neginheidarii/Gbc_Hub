@@ -11,7 +11,7 @@ const navItems = [
   { path: "/contact-us", label: "Contact US" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ joinNowBtn, goBackBtn }) => {
   return (
     <div className="navbar px-12 bg-[#E7F6FF] font-inter text-base font-bold leading-5 tracking-tight text-left  text-[#005AA5]">
       <div className="navbar-start">
@@ -61,14 +61,26 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <div className="navbar-end">
-        <a
-          href="/join-now"
-          className="btn  bg-[#FECB00] w-32 font-inter font-medium"
-        >
-          Join Now
-        </a>
-      </div>
+      {joinNowBtn && (
+        <div className="navbar-end">
+          <a
+            href="/join-now"
+            className="btn  bg-[#FECB00] w-32 font-inter font-medium"
+          >
+            {joinNowBtn}
+          </a>
+        </div>
+      )}
+      {goBackBtn && (
+        <div className="navbar-end">
+          <a
+            href="../"
+            className="btn bg-[#005AA5] text-white rounded-xl hover:bg-[#7fc8f0] w-32 font-inter font-medium"
+          >
+            {goBackBtn}
+          </a>
+        </div>
+      )}
     </div>
   );
 };
