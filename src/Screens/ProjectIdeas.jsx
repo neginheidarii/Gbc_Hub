@@ -8,31 +8,31 @@ const programs = {
       name: "Applied A.I. Solutions Development (Postgraduate)",
       description:
         "This program focuses on developing advanced skills in artificial intelligence and machine learning solutions for real-world applications.",
-      link: "https://www.georgebrown.ca/programs/applied-ai-solutions-development-t431",
+      link: "https://www.georgebrown.ca/programs/applied-ai-solutions-development-program-postgraduate-t431",
     },
     {
       name: "Blockchain Development (Postgraduate)",
       description:
         "Learn the intricacies of blockchain technology and decentralized app development with this hands-on program.",
-      link: "https://www.georgebrown.ca/programs/blockchain-development-t475",
+      link: "https://www.georgebrown.ca/programs/blockchain-development-program-postgraduate-t475",
     },
     {
       name: "Cloud Computing Technologies (Postgraduate)",
       description:
         "Gain in-depth knowledge of cloud systems, network security, and architecture to thrive in the ever-growing cloud computing domain.",
-      link: "https://www.georgebrown.ca/programs/cloud-computing-technologies-t465",
+      link: "https://www.georgebrown.ca/programs/cloud-computing-technologies-program-postgraduate-t465",
     },
     {
       name: "Cyber Security (Postgraduate)",
       description:
         "Prepare to combat cyber threats and enhance system security with advanced tools and techniques.",
-      link: "https://www.georgebrown.ca/programs/cyber-security-t433",
+      link: "https://www.georgebrown.ca/programs/cyber-security-program-postgraduate-t433",
     },
     {
       name: "Mobile Application Development and Strategy (Postgraduate)",
       description:
         "Master mobile application development with a focus on strategy, design, and user-centered approaches.",
-      link: "https://www.georgebrown.ca/programs/mobile-application-development-and-strategy-t440",
+      link: "https://www.georgebrown.ca/programs/mobile-application-development-and-strategy-program-postgraduate-t440",
     },
     {
       name: "Wireless Networking (Postgraduate)",
@@ -84,7 +84,7 @@ const programs = {
 function ProjectIdeas() {
   return (
     <div>
-      <Navbar />
+      <Navbar joinNowBtn={"Join Now"} />
 
       {/* Hero Section */}
       <Hero
