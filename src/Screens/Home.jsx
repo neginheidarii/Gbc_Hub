@@ -5,12 +5,13 @@ import { pac, speaker, hero, project } from "../assets/index";
 const Home = () => {
   return (
     <>
-      <Navbar />
+      <Navbar joinNowBtn={"Join Now"} />
       <Hero
         title="Connecting Industry with George Brown College"
         description=" GBC Hub is the cornerstone of innovation and collaboration at George Brown College. We bring together industry professionals, educators, and students to create a dynamic learning environment where real-world challenges meet cutting-edge education. Join us in shaping the future of tech education and driving impactful change across the industry."
         imgSrc={hero}
         buttonText="Learn more"
+        NavButton="#collaboration"
       />
       <div className="bg-gradient-to-r  from-[#005AA5] to-[#00A1DE] text-[#ffff] text-center w-full h-72">
         <p className="font-inter text-4xl font-semibold leading-[61.5px] tracking-tight text-center py-9 ">
@@ -25,7 +26,10 @@ const Home = () => {
         </p>
       </div>
       <div className="bg-[#e7f6ff] flex flex-col text-center py-10">
-        <h1 className="font-inter text-4xl font-semibold tracking-tight text-center py-10">
+        <h1
+          className="font-inter text-4xl font-semibold tracking-tight text-center py-10"
+          id="collab"
+        >
           Explore Collaboration Opportunities
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 px-10 place-items-center">

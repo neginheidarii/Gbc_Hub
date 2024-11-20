@@ -4,7 +4,7 @@ import { Navbar, Footer, FooterBadge, Hero, Card } from "../Components";
 function Contact() {
   return (
     <div>
-      <Navbar />
+      <Navbar joinNowBtn={"Join Now"} />
       <div className="flex justify-center items-center bg-[#e7f6ff]">
         <div className="w-2/3">
           <Hero
@@ -19,7 +19,7 @@ function Contact() {
               name: "Name",
               type: "text",
               placeholder: "Enter your name",
-              className: "", 
+              className: "",
             }}
             className=""
           />

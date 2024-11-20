@@ -5,7 +5,7 @@ import { pac } from "../assets/index";
 function PacMeetings() {
   return (
     <div>
-      <Navbar />
+      <Navbar joinNowBtn={"Join Now"} />
       <Hero
         title="Shape Our Curriculum with Industry Expertise"
         description={
