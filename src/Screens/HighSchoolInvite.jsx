@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { Navbar, Footer } from "../Components";
 
 const HighSchoolInvite = () => {
-  const [isFormVisible, setIsFormVisible] = useState(false); // State to toggle form visibility
+  const [isFormVisible, setIsFormVisible] = useState(false); 
+  const [expanded, setExpanded] = useState(null);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
+    isHighSchoolStudent: null ,
+    currentSchool: "",
+    graduationDate: ""
   });
 
-  const [expanded, setExpanded] = useState(null);
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -220,6 +223,7 @@ const HighSchoolInvite = () => {
               <input
                 type="checkbox"
                 name="isHighSchoolStudent"
+                value={formData.isHighSchoolStudent}
                 checked={formData.isHighSchoolStudent || false}
                 onChange={(e) =>
                   setFormData((prev) => ({
